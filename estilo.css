@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Work Sans", sans-serif;
+}
+header{
+    background-color: #213a8e;
+    color: white;
+    text-align: center;
+}
+
+.li-navbar{
+    list-style: none;
+    display: inline-block;
+}
+
+.li-navbar:hover{
+    color: red;
+    font-size: 15px;
+}
+
+.introducao{
+    background-color: #3f62d4;
+    color: white;
+}
+
+.descricao{
+    background-color: black;
+    color: white;
+}
