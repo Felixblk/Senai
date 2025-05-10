@@ -7,30 +7,80 @@
     <style>
         .box {
             border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
             background-color: #f9f9f9;
         }
 
         .box h2 {
             margin-top: 0;
+            margin-bottom: 10px;
         }
 
         label {
             display: block;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-size: 15px;
         }
 
         input, select {
             width: 100%;
-            padding: 5px;
-            margin-top: 5px;
+            padding: 6px;
+            margin-top: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
         }
 
         button {
-            margin-top: 15px;
-            padding: 10px 20px;
+            margin-top: 12px;
+            padding: 8px 12px;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-enviar {
+            background-color: #00ccff;
+            color: white;
+        }
+
+        .btn-enviar:hover {
+            background-color: #00ccff;
+        }
+
+        .btn-logar {
+            background-color: #45a049;
+            color: white;
+        }
+
+        .btn-logar:hover {
+            background-color: #45a049;
+        }
+
+        .btn-preferencias {
+            background-color: #fa00af;
+            color: white;
+        }
+
+        .btn-preferencias:hover {
+            background-color: #ff00bf;
+        }
+
+        fieldset {
+            margin-top: 10px;
+            padding: 8px;
+        }
+
+        legend {
+            font-size: 15px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            margin: 20px;
         }
     </style>
 </head>
@@ -59,7 +109,7 @@
             <label for="tel"><b>Telefone:</b></label>
             <input type="tel" id="tel" name="tel" placeholder="(00) 99999-9999" required maxlength="11">
 
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn-enviar">Enviar</button>
         </form>
     </div>
 
@@ -72,7 +122,7 @@
             <label for="password">Senha:</label>
             <input type="password" id="password" name="password" placeholder="Senha" required>
 
-            <button type="submit">Logar</button>
+            <button type="submit" class="btn-logar">Logar</button>
         </form>
     </div>
 
@@ -87,15 +137,17 @@
 
             <fieldset>
                 <legend>Lista de Compras:</legend>
-                <input type="checkbox" name="fruta" value="maçã"> Maçã<br>
-                <input type="checkbox" name="fruta" value="banana"> Banana
+                <label><input type="checkbox" name="fruta" value="maçã"> Maçã</label>
+                <label><input type="checkbox" name="fruta" value="banana"> Banana</label>
             </fieldset>
 
             <fieldset>
                 <legend>Atividades:</legend>
-                <input type="radio" name="atividades" value="Futebol"> Futebol<br>
-                <input type="radio" name="atividades" value="Basquete"> Basquete
+                <label><input type="radio" name="atividades" value="Futebol"> Futebol</label>
+                <label><input type="radio" name="atividades" value="Basquete"> Basquete</label>
             </fieldset>
+
+            <button type="submit" class="btn-preferencias">Salvar Preferências</button>
         </form>
     </div>
 
