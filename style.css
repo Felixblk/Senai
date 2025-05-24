@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: aqua;
+}
+
+form{
+    margin: auto;
+    max-width: 600px;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    border: 2px; 
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+input:focus, textarea:focus{
+  background-color: aquamarine; 
+}
