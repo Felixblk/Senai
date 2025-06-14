@@ -1,62 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Exemplo jQuery</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
-  <style>
-    body { font-family: Arial, sans-serif; padding: 30px; }
-    #mensagem { 
-        color: blue; 
-        font-size: 20px;
-        background-color: chocolate;
-        border: 1px solid white;
-        padding: 10px;
-        width: fit-content;
-    }
-
-    #entrada {
-        margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filme e/ou Séries</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Filmes e/ou Séries</h1>
 
-  <h1>Atividade com jQuery</h1>
-  <p id="mensagem">Texto original</p>
+        <input type="text" id="nome" placeholder="Nome do Filme/Série">
+        <input type="number" id="classificacao" placeholder="Classificação (0-5)" max="5" min="0">
+        <input type="text" id="Genero" placeholder="Gênero">
+        <input type="number" id="ano" placeholder="Ano">
+        <input type="text" id="comentario" placeholder="Comentário">
 
-  <input type="text" id="entrada" placeholder="Digite algo aqui">
-  <br><br>
+        <button onclick="adicionarFilme()">Adicionar informações sobre o filme/série</button>
 
-  <button id="botao">Clique aqui</button>
+        <table id="tabela-filmes">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Título</th>
+                    <th>Gênero</th>
+                    <th>Ano</th>
+                    <th>Avaliação</th>
+                    <th>Comentário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+       
+            </tbody>
+        </table>
+    </div>
 
-  <script>
-    $("#botao").click(function() {
-        $("#mensagem").text("Você clicou no botão!").css("color", "black").fadeOut(500).fadeIn(500);
-    });
-
-    // Corrigido: 'dblclick' e não 'dbclick'
-    $("#mensagem").dblclick(function() {
-        $(this).append(" Você deu um duplo clique! ").css("font-weight", "bold");
-    });
-
-    // Corrigido: 'cyan' em inglês + 'background-color' escrito corretamente
-    $("#mensagem").mouseenter(function() {
-        $(this).css("background-color", "cyan");
-    }).mouseleave(function() {
-        $(this).css("background-color", "white");
-    });
-
-    $("#botao").click(function() {
-        $("#mensagem").append("<p>Adicionando append</p>");
-        $("#mensagem").prepend("<p>Adicionando prepend</p>");
-        $("#mensagem").before("<p>Before - Texto antes e fora do elemento</p>");
-        $("#mensagem").after("<p>After - Texto antes e fora do meu elemento</p>");
-    });
-
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
