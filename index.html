@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Exemplo jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; }
+    #mensagem { 
+        color: blue; 
+        font-size: 20px;
+        background-color: chocolate;
+        border: 1px solid white;
+        padding: 10px;
+        width: fit-content;
+    }
+
+    #entrada {
+        margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cadastro de Produtos</h1>
 
-        <input type="text" id="nome" placeholder="Nome do Produto">
-        <input type="number" id="preço" placeholder="Preço">
-        <input type="number" id="quanttidade" placeholder="Quantiidade">
-        <button onclick="adicionarProduto()">Adicionar Produto</button>
+  <h1>Atividade com jQuery</h1>
+  <p id="mensagem">Texto original</p>
 
-        <table id="tabela-produtos">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
-                    <th>Ações</th>
-               </tr>
-            </thead>
-            <tbody>
-                <!--Aqui os Produtos serão adicionados através do JavaScript-->
-            </tbody>
-        </table>
-    </div>
-    
+  <input type="text" id="entrada" placeholder="Digite algo aqui">
+  <br><br>
+
+  <button id="botao">Clique aqui</button>
+
+  <script>
+    $("#botao").click(function() {
+        $("#mensagem").text("Você clicou no botão!").css("color", "black").fadeOut(500).fadeIn(500);
+    });
+
+    // Corrigido: 'dblclick' e não 'dbclick'
+    $("#mensagem").dblclick(function() {
+        $(this).append(" Você deu um duplo clique! ").css("font-weight", "bold");
+    });
+
+    // Corrigido: 'cyan' em inglês + 'background-color' escrito corretamente
+    $("#mensagem").mouseenter(function() {
+        $(this).css("background-color", "cyan");
+    }).mouseleave(function() {
+        $(this).css("background-color", "white");
+    });
+
+    $("#botao").click(function() {
+        $("#mensagem").append("<p>Adicionando append</p>");
+        $("#mensagem").prepend("<p>Adicionando prepend</p>");
+        $("#mensagem").before("<p>Before - Texto antes e fora do elemento</p>");
+        $("#mensagem").after("<p>After - Texto antes e fora do meu elemento</p>");
+    });
+
+</script>
+
 </body>
 </html>
+
